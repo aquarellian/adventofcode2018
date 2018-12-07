@@ -70,12 +70,12 @@ with open("../resources/task13.txt") as f:
                 av_elves.append(elf)
         av_elves.sort()
 
+        print(av_tasks)
+        print(av_elves)
         while len(av_tasks) > 0 and len(av_elves) > 0:
             my_task = av_tasks[0]
             my_elf = av_elves[0]
-            print(av_tasks)
-            print(av_elves)
-            print('elf ' + str(my_elf) + ' takes ' + str(my_task))
+            print('elf ' + str(my_elf) + ' takes ' + str(my_task) + ' on min ' + str(duration))
 
             curr_task_duration = get_duration(my_task)
             av_elves.remove(my_elf)
@@ -90,14 +90,14 @@ with open("../resources/task13.txt") as f:
                     if s not in path and (reversed_tree.get(s, None) is None or all((x in path) for x in reversed_tree[s])):
                         tasks_to_starttime[s] = duration + curr_task_duration
 
-            print(elves_to_starttime)
-            print(tasks_to_starttime)
-            print(av_tasks)
-            print(av_elves)
-            print(duration)
+            # print(elves_to_starttime)
+            # print(tasks_to_starttime)
+            # print(av_tasks)
+            # print(av_elves)
+            # print(duration)
         duration += 1
-        print(duration)
-    print(max(elves_to_starttime.values()))
+        # print(duration)
+    print(max(elves_to_starttime.values())-1)
 
 
 
