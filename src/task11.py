@@ -59,34 +59,7 @@ with open("../resources/task11.txt") as f:
     print(count)
     print(max(count))
 
-    print("task 12")
-    print(dist_field.values())
-    print(on_border_list)
-    maybe = [x for x in dist_field.values() if x < 10000]
-    print(maybe)
-    reversed_dictionary = dict(map(reversed, dist_field.items()))
-    aset = set()
-    for value in maybe:
-        x, y = reversed_dictionary.get(value)
-        val = field[x][y]
-        if val != '.' and val not in on_border_list and count[val-1] != 0:
-            aset.add(count[val-1])
-            # print(count[val-1])
-            # break
-    print(aset)
 
-    # min_total_dist = min(dist_field.values())
-
-    # print(min_total_dist)
-    # for key, value in dist_field.items():
-    #     # print(value)
-    #     if value == min_total_dist:
-    #         print(key)
-    #         x, y = key
-    #         print(x,y)
-    #         val = field[x][y]
-    #         print(val)
-    #         print(count[val-1])
 
 
 
