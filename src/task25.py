@@ -1,94 +1,187 @@
-def do_turn(x,y):
+def make_turn(carts, cart):
+    data = carts[cart]
+    x = data[0]
+    y = data[1]
+    dir = data[2]
+    new_symb = ''
+    if turns[cart] == -1:
+        if dir == '>':
+            new_symb = '^'
+        elif dir == '<':
+            new_symb = 'v'
+        elif dir == '^':
+            new_symb = '<'
+        elif dir == 'v':
+            new_symb = '>'
+    elif turns[cart] == 0:
+        new_symb = dir
+    elif turns[cart] == 1:
+        if dir == '>':
+            new_symb = 'v'
+        elif dir == '<':
+            new_symb = '^'
+        elif dir == '^':
+            new_symb = '>'
+        elif dir == 'v':
+            new_symb = '<'
 
-    for key, value in carts.items():
-        if value == [x,y]:
-            cartid = key
-            turn = turns[cartid]
-            turns[cartid] = (turn + 1 if turn < 1 else -1)
-
-            if turn == -1:
-                if track[y][x] == '>':
-                    new_symb = '^'
-                elif track[y][x] == '<':
-                    new_symb = 'v'
-                elif track[y][x] == '^':
-                    new_symb = '<'
-                elif track[y][x] == 'v':
-                    new_symb = '>'
-            elif turn == 0:
-                new_symb = track[y][x]
-            elif turn == 1:
-                if track[y][x] == '>':
-                    new_symb = 'v'
-                elif track[y][x] == '<':
-                    new_symb = '^'
-                elif track[y][x] == '^':
-                    new_symb = '>'
-                elif track[y][x] == 'v':
-                    new_symb = '<'
-
-
-
-
-def do_move():
+    turns[cart] = (turns[cart] + 1 if turns[cart] < 1 else -1)
+    print('cart ' + str(cart) + ' turned ' + dir + ' to ' + new_symb)
+    return new_symb
 
 
-def is_cart(track, x, y):
-    return track[y][x] in ['>', '<', '^', 'v']
+def make_move(carts, cartid, track):
+    cart = carts[cartid][2]
+    x = carts[cartid][0]
+    y = carts[cartid][1]
+    if cart == '>':
+        if track[y][x + 1] == '-':
+            return x + 1, y, cart
+        elif track[y][x + 1] == '/':
+            return x+1, y, '^'
+        elif track[y][x + 1] == '\\':
+            return x+1, y, 'v'
+        elif track[y][x + 1] == '+':
+            symb = make_turn(carts, cartid)
+            return x + 1, y, symb
+        else:
+
+            print_out(track, carts)
+            print(track[y][x + 1])
+            print(carts[cartid])
+            print('ERROR1')
+    elif cart == '<':
+        if track[y][x - 1] == '-':
+            return x - 1, y, cart
+        elif track[y][x - 1] == '/':
+            return x-1, y, 'v'
+        elif track[y][x - 1] == '\\':
+            return x-1, y, '^'
+        elif track[y][x - 1] == '+':
+            symb = make_turn(carts, cartid)
+            return x - 1, y, symb
+        else:
+            print(track[y][x - 1])
+            print('ERROR2')
+    elif cart == '^':
+        if track[y - 1][x] == '|':
+            return x, y - 1, cart
+        elif track[y - 1][x] == '/':
+            return x, y-1, '>'
+        elif track[y - 1][x] == '\\':
+            return x, y-1, '<'
+        elif track[y - 1][x] == '+':
+            symb = make_turn(carts, cartid)
+            return x, y-1, symb
+        else:
+            print(track[y-1][x])
+            print('ERROR3')
+    elif cart == 'v':
+        if track[y + 1][x] == '|':
+            return x, y + 1, cart
+        elif track[y + 1][x] == '/':
+            return x, y+1, '<'
+        elif track[y + 1][x] == '\\':
+            return x, y+1, '>'
+        elif track[y + 1][x] == '+':
+            symb = make_turn(carts, cartid)
+            return x, y+1, symb
+        else:
+            print(track[y+1][x])
+            print('ERROR4')
+
+
+def is_cart(symbol):
+    return symbol in ['>', '<', '^', 'v']
+
 
 def is_hor_road(track, x, y):
     i = 0
-    while x-i >= 0 and is_cart(track, x-i, y):
-        i+=1
-    road_on_left = track[y][x-i] == '-'
+    while x - i > 0 and is_cart(track[y][x - i]):
+        i += 1
+    road_on_left = ((x + i) >= 0) and track[y][x - i] == '-'
     i = 0
-    while x+i <= len(track[y]) and is_cart(track, x+i, y):
-        i+=1
-    road_on_right = track[y][x+i] == '-'
+    while x + i < len(track[y]) and is_cart(track[y][x + i]):
+        i += 1
+    road_on_right = ((x + i) < len(track[y])) and track[y][x + i] == '-'
     return road_on_left and road_on_right
+
 
 def is_ver_road(track, x, y):
     i = 0
-    while y-i >= 0 and is_cart(track, x, y-i):
-        i+=1
-    road_on_left = track[y-i][x] == '-'
+    while y - i >= 0 and is_cart(track[y - i][x]):
+        i += 1
+    road_on_left = (y - i >= 0) and track[y - i][x] == '-'
     i = 0
-    while y+i <= len(track) and is_cart(track, x, y+1):
-        i+=1
-    road_on_right = track[y][x+i] == '|'
+    while y + i < len(track) and is_cart(track[y + i][x]):
+        i += 1
+    road_on_right = (y + i < len(track)) and track[y][x + i] == '|'
     return road_on_left and road_on_right
 
+def print_out(track, carts):
+    import copy
+    new_track = copy.deepcopy(track)
+    for cart, val in carts.items():
+        x = val[0]
+        y = val[1]
+        dir = val[2]
+        new_track[y][x] = dir
+    for y in range(0, len(new_track)):
+        str = ''
+        for x in range(0, len(new_track[y])):
+            str += new_track[y][x]
+        print(str)
 
-with open("../resources/task23.txt") as f:
+
+with open("../resources/task25.txt") as f:
     content = f.readlines()
     carts = {}
+    sorted_carts = []
     turns = {}
     cartid = 0
-    track = {}
-    for y, line in enumerate(track):
-        for x in range(0, len(line)):
-            if track.get(x, None) is None:
-                track[x] = {}
-            track[x][y] = line[x]
-
-    for x in track.keys():
-        for y in track[x].keys():
-             if is_cart(track, x, y):
-                carts[cartid] = [x,y]
+    track = []
+    for y, line in enumerate(content):
+        track.append([])
+        for x in range(0, len(line.replace('\n', ''))):
+            track[y].append(line[x])
+            if is_cart(track[y][x]):
+                carts[cartid] = [x, y, track[y][x]]
                 turns[cartid] = -1
-                if is_hor_road(track, x, y):
-                    if is_ver_road(track, x,y):
-                        line.[x] = '+'
-                    else :
-                        line[x] = ''
-                # now we replace cart with corresponding track
-                if track[y-1][x] == '|' and track[y+1][x] == '|':
-                    if track[y][x-1] == track[y][x-1]
-                        line[x] =
-    for y, line in enumerate(track):
-        for x in range(0, len(line)):
-            if '+' == line[x]:
-                do_turn()
+                cartid += 1
+    sorted_carts = list(carts.keys())
+
+    for cart in sorted_carts:
+        coord = carts[cart]
+        x = coord[0]
+        y = coord[1]
+        if is_hor_road(track, x, y):
+            if is_ver_road(track, x, y):
+                track[y][x] = '+'
+            else:
+                track[y][x] = '-'
+        else:
+            track[y][x] = '|'
+
+    crashed = False
+    while not crashed:
+        sorted(sorted_carts, key=lambda cart: carts[cart][1])
+        sorted(sorted_carts, key=lambda cart: carts[cart][0])
+        for cart in sorted_carts:
+            # print(track)
+            # print(carts)
+            # print(carts[cart])
+            x, y, dir = make_move(carts, cart, track)
+            for crt, val in carts.items():
+                if val[0] == x and val[1] == y and crt != cart:
+                    crashed = True
+                    print([x, y])
+                    break
+                carts[cart] = [x, y, dir]
+            if crashed:
+                break
+        print_out(track, carts)
+
+
 
 
 

@@ -49,8 +49,16 @@ elf2 = 1
 pattern = '580741'
 
 i = 0
+elf1str = ''
+elf2str = ''
 while pattern not in as_str(alist) :
     alist, elf1, elf2 = make_move(alist, elf1, elf2)
+    elf1str += str(elf1)
+    elf2str += str(elf2)
+    if i % 10 == 0:
+        print(elf1str)
+        print(elf2str)
+    # print(as_str(alist))
     # printout(alist, elf1, elf2)
     i+= 1
 # print(as_str(alist))
