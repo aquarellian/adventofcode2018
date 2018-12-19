@@ -1,73 +1,28 @@
-
-def substr_between(line, start_mrk, end_mrk):
-    if start_mrk is None or start_mrk in line:
-        start = 0 if start_mrk is None else line.index(start_mrk) + len(start_mrk)
-    else:
-        return None
-    end = len(line) if end_mrk is None else line.index(end_mrk, start)
-    return line[start:end]
+def fuel_level(x, y, serial):
+    rack_id = x + 10
+    pow_l = rack_id * (rack_id * y + serial)
+    hundreds = int(pow_l / 100) % 10
+    return hundreds - 5
 
 
-with open("../resources/task20.test.txt") as f:
-    content = f.readlines()
-    data = {}
-    minx = None
-    miny = None
-    maxx = None
-    maxy = None
-    for line in content:
-        coord = substr_between(line, 'position=<', '>').split(',')
-        x = int(coord[0])
-        y = int(coord[1])
-        velocity = substr_between(line, 'velocity=<', '>').split(',')
-        dx = int(velocity[0])
-        dy = int(velocity[1])
-        data[(x, y)] = [dx, dy]
-        print(str(x) + ' ' + str(y) + ' ' + str(dx) + ' ' + str(dy))
-        minx = x if minx is None or minx > x else minx
-        maxx = x if maxx is None or maxx < x else maxx
-        miny = y if miny is None or miny > y else miny
-        maxy = y if maxy is None or maxy < y else maxy
+# print(fuel_level(3,5,8))
+# print(fuel_level(122,79,57))
+# print(fuel_level(217,196,39))
+# print(fuel_level(101,153,71))
 
-    print('miny=' + str(miny))
-    print('maxy=' + str(maxy))
+# serial = 18  # test ok
+# serial = 42  # test ok
+serial = 7403
+pow2coord = {}
+for x in range(1, 299):
+    for y in range(1, 299):
+        power = fuel_level(x, y, serial) + fuel_level(x + 1, y, serial) + fuel_level(x + 2, y, serial) + \
+                fuel_level(x, y + 1, serial) + fuel_level(x + 1, y + 1, serial) + fuel_level(x + 2, y + 1, serial) + \
+                fuel_level(x, y + 2, serial) + fuel_level(x + 1, y + 2, serial) + fuel_level(x + 2, y + 2, serial)
+        pow2coord[power] = [x, y]
 
-    keep_going = True
-    sec = 0
-    deltax = abs(minx) if minx < 0 else -minx
-    deltay = abs(miny) if miny < 0 else -miny
-
-
-    while keep_going:
-        updated = []
-        for coord, vel in data.items():
-            print(coord)
-            print(vel)
-            x=coord[0]
-            y=coord[1]
-            dx = vel[0]
-            dy = vel[1]
-            newx = x+sec*dx
-            newy = y+sec*dy
-            updated.append([newx, newy])
-        print(updated)
-
-        print('after ' + str(sec) + ' sec')
-        for y in range(miny, maxy+1):
-            printlane=''
-            for x in range(minx, maxx+1):
-                printlane += ( '#' if [x,y] in updated else '.')
-
-            print(printlane)
-
-        keep_going = input('continue?') != 'n'
-
-        sec +=1
-
-
-
-
-
-
-
+max_pow = max(pow2coord.keys())
+print(max_pow)
+res = pow2coord[max_pow]
+print(res)
 

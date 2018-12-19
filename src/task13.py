@@ -2,7 +2,7 @@ def get_duration(task):
     import string
     return string.ascii_uppercase.index(task) + 1 + 60
 
-with open("../resources/task13.txt") as f:
+with open("../resources/task13.2.txt") as f:
     content = f.readlines()
     tree = {}
     reversed_tree = {}
@@ -53,28 +53,37 @@ with open("../resources/task13.txt") as f:
         tasks_to_starttime[task] = 0
 
     tasks = list(maybe_roots) + list(not_roots)
+    print(tasks)
+
+    print(tree)
 
     duration = 0
     av_tasks = []
     av_elves = []
+    elf_to_task = {}
     path = ''
+    done_path = ''
 
     while len(tasks) != 0:
         for task, time in tasks_to_starttime.items():
             if time == duration:
                 av_tasks += task
-        av_tasks.sort()
 
         for elf, time in elves_to_starttime.items():
             if time == duration:
                 av_elves.append(elf)
-        av_elves.sort()
+                if elf in elf_to_task:
+                    done_path += elf_to_task[elf]
 
-        print(av_tasks)
-        print(av_elves)
+        # print(av_tasks)
+        # print(av_elves)
+
         while len(av_tasks) > 0 and len(av_elves) > 0:
+            av_tasks.sort()
+            av_elves.sort()
             my_task = av_tasks[0]
             my_elf = av_elves[0]
+            elf_to_task[my_elf] = my_task
             print('elf ' + str(my_elf) + ' takes ' + str(my_task) + ' on min ' + str(duration))
 
             curr_task_duration = get_duration(my_task)
@@ -97,7 +106,11 @@ with open("../resources/task13.txt") as f:
             # print(duration)
         duration += 1
         # print(duration)
-    print(max(elves_to_starttime.values())-1)
+    print(elves_to_starttime)
+    print(tasks_to_starttime)
+    print(done_path)
+    print(len(done_path) + 1)
+    print(max(elves_to_starttime.values()))
 
 
 
