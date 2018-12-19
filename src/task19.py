@@ -11,10 +11,6 @@ def substr_between(line, start_mrk, end_mrk):
 with open("../resources/task19.txt") as f:
     content = f.readlines()
     data = {}
-    minx = None
-    miny = None
-    maxx = None
-    maxy = None
     for line in content:
         coord = substr_between(line, 'position=<', '>').split(',')
         x = int(coord[0])
@@ -22,61 +18,64 @@ with open("../resources/task19.txt") as f:
         velocity = substr_between(line, 'velocity=<', '>').split(',')
         dx = int(velocity[0])
         dy = int(velocity[1])
-        data[x, y] = [dx, dy]
-        print(str(x) + ' ' + str(y) + ' ' + str(dx) + ' ' + str(dy))
-        minx = x if minx is None or minx > x else minx
-        maxx = x if maxx is None or maxx < x else maxx
-        miny = y if miny is None or miny > y else miny
-        maxy = y if maxy is None or maxy < y else maxy
-
-    print('miny=' + str(miny))
-    print('maxy=' + str(maxy))
+        data[(x, y)] = [dx, dy]
+    #     minx = x if minx is None or minx > x else minx
+    #     maxx = x if maxx is None or maxx < x else maxx
+    #     miny = y if miny is None or miny > y else miny
+    #     maxy = y if maxy is None or maxy < y else maxy
+    #
+    # print('miny=' + str(miny))
+    # print('maxy=' + str(maxy))
 
     keep_going = True
-    import copy
-    data_before = copy.copy(data)
-    data_after = {}
-    sec = 0
-    deltax = abs(minx) if minx < 0 else -minx
-    deltay = abs(miny) if miny < 0 else -miny
+    sec = 10880
 
 
-    while keep_going:
+    while keep_going and sec<10900:
+        minx = None
+        miny = None
+        maxx = None
+        maxy = None
+        updated = []
+        for coord, vel in data.items():
+            x=coord[0]
+            y=coord[1]
+            dx = vel[0]
+            dy = vel[1]
+            newx = x+sec*dx
+            newy = y+sec*dy
+            updated.append([newx, newy])
+            minx = newx if minx is None or minx > newx else minx
+            maxx = newx if maxx is None or maxx < newx else maxx
+            miny = newy if miny is None or miny > newy else miny
+            maxy = newy if maxy is None or maxy < newy else maxy
+        # print(updated)
+
         print('after ' + str(sec) + ' sec')
-        import cv2
-        import numpy as np
-        img = np.zeros((maxx-minx, maxy-miny, 2), np.uint8)
+        print('minx='+str(minx) + 'maxx='+str(maxx))
+        print('miny='+str(miny) + 'maxy='+str(maxy))
+        filename = '../resources/task20.out.'+str(sec)+'.txt'
+        # print_out = input('print out?') != 'n'
+        print_out = maxy < 5000 or maxx<5000
 
-        # array = np.zeros([maxx-minx, maxy-miny, 3], dtype=np.uint8)
-        # with open('../resources/task20.out.txt', 'w', newline='') as r:
-        for y in range(miny, maxy+1):
-            printlane=''
-            for x in range(minx, maxx+1):
-                vel = data_before.get((x, y), None)
-                if vel is not None:
-                    printlane += '#'
-                    dx = vel[0]
-                    dy = vel[1]
-                    newx = x+dx
-                    newy = y+dy
-                    data_after[newx, newy] = vel
-
-                    img.itemset((x+deltax, y+deltay, 2), 255)
-                else:
-                    printlane += '.'
-
-        # r.write(printlane + '\n')
-
-            # print(printlane)
-        from PIL import Image
-        # img = Image.fromarray(array)
-        img.save('../resources/task20.out.png')
-
-        keep_going = input('continue?') != 'n'
-
-        data_before = copy.copy(data_after)
-        data_after = {}
+        done = False
+        if print_out:
+            done = True
+        if print_out:
+            with open(filename, 'w') as r:
+                for y in range(miny, maxy+1):
+                    printlane=''
+                    for x in range(minx, maxx+1):
+                        printlane += ( '#' if [x,y] in updated else '.')
+                    # print('y=' + str(y) + ' ' +str(len(printlane)))
+                    r.write(printlane + '\n')
+                    # print(printlane)
+                r.close()
+        # keep_going = input('continue?') != 'n'
+        keep_going = True
         sec +=1
+        # if not print_out and done:
+        #     keep_going = False
 
 
 
