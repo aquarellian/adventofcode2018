@@ -15,19 +15,19 @@ def muli(reg, a, b, c):
 
 
 def banr(reg, a, b, c):
-    reg[c] = reg[a] & reg[c]
+    reg[c] = reg[a] & reg[b]
 
 
 def bani(reg, a, b, c):
-    reg[c] = reg[a] & c
+    reg[c] = reg[a] & b
 
 
 def borr(reg, a, b, c):
-    reg[c] = reg[a] | reg[c]
+    reg[c] = reg[a] | reg[b]
 
 
 def bori(reg, a, b, c):
-    reg[c] = reg[a] | c
+    reg[c] = reg[a] | b
 
 
 def setr(reg, a, b, c):
@@ -59,7 +59,7 @@ def eqri(reg, a, b, c):
 
 
 def eqrr(reg, a, b, c):
-    reg[c] = 1 if a == b else 0
+    reg[c] = 1 if reg[a] == reg[b] else 0
 
 
 def substr_between(line, start_mrk, end_mrk):
@@ -71,7 +71,7 @@ def substr_between(line, start_mrk, end_mrk):
     return line[start:end]
 
 
-with open("../resources/task31.test.txt") as f:
+with open("../resources/task31.txt") as f:
     content = f.readlines()
     ind = 0
     data = []
@@ -100,6 +100,7 @@ with open("../resources/task31.test.txt") as f:
     rbops = [gtir, eqir]
     operations = rops + raops + rbops
     num2opers = {}
+    oper2nums = {}
     sample2oper = {}
     count = 0
     for entry in data:
@@ -108,51 +109,66 @@ with open("../resources/task31.test.txt") as f:
         after = entry['after']
 
         if cmd[0] not in num2opers:
-            num2opers[cmd[0]] = set()
-        # possible_ops = []
-        # # is arg 1 register?
-        # aCanBeReg = (0<= cmd[1] <=3)
-        # bCanBeReg = (0<= cmd[2] <=3)
-        #
-        # aMatches = before[1] == cmd[1]
-        # bMatches = before[2] == cmd[2]
-        #
-        # aCanBeReg &= aMatches
-        # bCanBeReg &= bMatches
-        #
-        # if aCanBeReg:
-        #     possible_ops += raops
-        #     if bCanBeReg:
-        #         possible_ops += rbops
-        #         possible_ops += rops
-        # elif bCanBeReg:
-        #     possible_ops += rbops
+            num2opers[cmd[0]] = []
 
-
-        print(entry)
         operCount = 0
         opers = set()
 
         for oper in operations:
-            # res = [before[0], before[1], before[2], before[3]]
-            oper(before, cmd[1], cmd[2], cmd[3])
-            # if oper in rops:
-            #     oper(res, before[1], before[2], cmd[3])
-            # elif oper in raops:
-            #     oper(res, before[1], cmd[2], cmd[3])
-            # elif oper in rbops:
-            #     oper(res, cmd[1], before[2], cmd[3])
+            if oper not in oper2nums:
+                oper2nums[oper] = []
+            res = [before[0], before[1], before[2], before[3]]
+            oper(res, cmd[1], cmd[2], cmd[3])
 
-            if before == after:
-                num2opers[cmd[0]].add(oper)
+            if res == after:
+                num2opers[cmd[0]].append(oper)
+                oper2nums[oper].append(cmd[0])
                 opers.add(oper)
                 operCount+=1
-        print(opers)
         if operCount>=3:
             count +=1
     print(count)
+    # part 2
+    # print(num2opers)
+    num2oper = {}
+    opers = set()
+
+    # from collections import Counter
+    # for key, value in num2opers.items():
+    # # print(key, max(value,key=value.count))
+    #     op2count = Counter(value)
+    #     print()
+
+
+
+    # while len(num2opers) > 0:
+    #     for key, value in num2opers.items():
+    #         if value in operations:
+    #             num2opers[key].remove(value)
+    #         if len(value) == 1:
+    #             print(value)
+    #             num2oper[key] = value[0]
+    #             opers.add(value[0])
+    #             print(opers)
+
+
+    for key, value in num2opers.items():
+
+        from collections import Counter
+        # print(key, max(value,key=value.count))
+        op2count = Counter(value)
+        print(key, Counter(value))
+    for key, value in oper2nums.items():
+
+        from collections import Counter
+        # print(key, max(value,key=value.count))
+        op2count = Counter(value)
+        print(key, Counter(value))
 
     #192 too low
     #13,14 wrong
-    #648 wrong 637??656???
-
+    #648 wrong 637??656 wrong???
+    # 610 wrong
+    # 594 wrong
+    # 621 wrong
+    #636
