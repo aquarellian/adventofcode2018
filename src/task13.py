@@ -53,28 +53,38 @@ with open("../resources/task13.txt") as f:
         tasks_to_starttime[task] = 0
 
     tasks = list(maybe_roots) + list(not_roots)
+    print(tasks)
+
+    print(tree)
 
     duration = 0
     av_tasks = []
     av_elves = []
+    elf_to_task = {}
     path = ''
+    done_path = ''
+    unlocked = list(maybe_roots)
 
     while len(tasks) != 0:
         for task, time in tasks_to_starttime.items():
-            if time == duration:
+            if time == duration and task in unlocked:
                 av_tasks += task
-        av_tasks.sort()
 
         for elf, time in elves_to_starttime.items():
             if time == duration:
                 av_elves.append(elf)
-        av_elves.sort()
+                if elf in elf_to_task:
+                    done_path += elf_to_task[elf]
 
-        print(av_tasks)
-        print(av_elves)
+        # print(av_tasks)
+        # print(av_elves)
+
         while len(av_tasks) > 0 and len(av_elves) > 0:
+            av_tasks.sort()
+            av_elves.sort()
             my_task = av_tasks[0]
             my_elf = av_elves[0]
+            elf_to_task[my_elf] = my_task
             print('elf ' + str(my_elf) + ' takes ' + str(my_task) + ' on min ' + str(duration))
 
             curr_task_duration = get_duration(my_task)
@@ -87,8 +97,12 @@ with open("../resources/task13.txt") as f:
 
             if tree.get(my_task) is not None:
                 for s in tree[my_task]:
-                    if s not in path and (reversed_tree.get(s, None) is None or all((x in path) for x in reversed_tree[s])):
+                    if tasks_to_starttime.get(s, None) is None:
                         tasks_to_starttime[s] = duration + curr_task_duration
+                    else:
+                        tasks_to_starttime[s] = max(tasks_to_starttime[s], duration + curr_task_duration)
+                    if s not in path and (reversed_tree.get(s, None) is None or all((x in path) for x in reversed_tree[s])):
+                        unlocked.append(s)
 
             # print(elves_to_starttime)
             # print(tasks_to_starttime)
@@ -97,7 +111,11 @@ with open("../resources/task13.txt") as f:
             # print(duration)
         duration += 1
         # print(duration)
-    print(max(elves_to_starttime.values())-1)
+    print(elves_to_starttime)
+    print(tasks_to_starttime)
+    print(done_path)
+    print(len(done_path) + 1)
+    print(max(elves_to_starttime.values()))
 
 
 

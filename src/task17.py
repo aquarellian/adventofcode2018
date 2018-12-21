@@ -41,6 +41,7 @@ def make_move(ind):
         while extra_ind < 0:
             extra_ind += len(game)
         extra_marble = game[extra_ind]
+        print(extra_marble)
         score += extra_marble
 
         game.remove(extra_marble)
