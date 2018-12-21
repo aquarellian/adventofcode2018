@@ -1,69 +1,38 @@
-
-
-def get_score(alist, elf1, elf2):
-    score = alist[elf1] + alist[elf2]
-    return [int(a) for a in str(score)]
-
-
-def make_move(alist, elf1, elf2):
-    new_scores = get_score(alist, elf1, elf2)
-    for score in new_scores:
-        alist.append(score)
-    elf1 = select_current(alist, elf1)
-    elf2 = select_current(alist, elf2)
-    return alist, elf1, elf2
-
-
-def select_current(alist, elf):
-    return (elf + alist[elf] + 1) % len(alist)
-
-
-def printout(alist, elf1, elf2):
-    strg = ''
-    for i, s in enumerate(alist):
-        if i == elf1:
-            strg += ('(' + str(s) + ') ')
-        elif i == elf2:
-            strg += ('[' + str(s) + '] ')
-        else:
-            strg += (str(s) + ' ')
-    print(strg)
-
-def as_str(alist):
-    strg = ''
-    for i, s in enumerate(alist):
-        strg += str(s)
-    return strg
-
-def print_result(strg, pattern):
-    print(strg.index(pattern))
-
-
-alist = [3, 7]
+table = '37'
 elf1 = 0
 elf2 = 1
-# pattern = '51589' # test ok
-# pattern = '01245' # test ok
-# pattern = '92510' # test ok
-# pattern = '59414' # test ok
 pattern = '580741'
 
+# all ok
+# pattern = '51589'
+# pattern = '01245'
+# pattern = '92510'
+# pattern = '59414'
+
+res = {}
+mov = {}
+rln = {}
+for i in range(0, 10):
+    mov[str(i)] = 1 + i
+    for j in range(0, 10):
+        sval = str(i+j)
+        res[str(i) + str(j)] = sval
+        rln[sval] = len(sval)
+
+
 i = 0
-elf1str = ''
-elf2str = ''
-while pattern not in as_str(alist) :
-    alist, elf1, elf2 = make_move(alist, elf1, elf2)
-    elf1str += str(elf1)
-    elf2str += str(elf2)
-    if i % 10 == 0:
-        print(elf1str)
-        print(elf2str)
-    # print(as_str(alist))
-    # printout(alist, elf1, elf2)
-    i+= 1
-# print(as_str(alist))
-print_result(as_str(alist), pattern)
-
-
-
-
+ln = len(table)
+while True:
+    elf1v = table[elf1]
+    elf2v = table[elf2]
+    recipe = res[elf1v + elf2v]
+    table += recipe
+    ln += rln[recipe]
+    elf1 = (elf1 + mov[elf1v]) % ln
+    elf2 = (elf2 + mov[elf2v]) % ln
+    i += 1
+    if i % 100000 == 0:
+        print(i)
+        if pattern in table:
+            break
+print(table.index(pattern))
