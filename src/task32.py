@@ -76,6 +76,7 @@ with open("../resources/task31.txt") as f:
     ind = 0
     data = []
     entry = {}
+    prog = []
 
     for line in content:
 
@@ -93,8 +94,8 @@ with open("../resources/task31.txt") as f:
                 strs = line.strip().split(' ')
                 entry['command'] = [int(strs[0]), int(strs[1]), int(strs[2]), int(strs[3])]
             else:
-                # second part started
-                break
+                prog.append(line.split())
+
     rops = [addr, mulr, banr, borr, setr, gtrr, eqrr]
     raops = [addi, muli, bani, bori, seti, gtri, eqri]
     rbops = [gtir, eqir]
@@ -109,58 +110,60 @@ with open("../resources/task31.txt") as f:
         after = entry['after']
 
         if cmd[0] not in num2opers:
-            num2opers[cmd[0]] = []
+            num2opers[cmd[0]] = set()
 
         operCount = 0
-        opers = set()
 
         for oper in operations:
             if oper not in oper2nums:
-                oper2nums[oper] = []
+                oper2nums[oper] = set()
             res = [before[0], before[1], before[2], before[3]]
             oper(res, cmd[1], cmd[2], cmd[3])
 
             if res == after:
-                num2opers[cmd[0]].append(oper)
-                oper2nums[oper].append(cmd[0])
-                opers.add(oper)
-                operCount+=1
-        if operCount>=3:
-            count +=1
-    print(count)
+                num2opers[cmd[0]].add(oper)
+                oper2nums[oper].add(cmd[0])
+
     # part 2
-    # print(num2opers)
-    num2oper = {}
-    opers = set()
 
-    # from collections import Counter
-    # for key, value in num2opers.items():
-    # # print(key, max(value,key=value.count))
-    #     op2count = Counter(value)
-    #     print()
-
-
-
-    # while len(num2opers) > 0:
-    #     for key, value in num2opers.items():
-    #         if value in operations:
-    #             num2opers[key].remove(value)
-    #         if len(value) == 1:
-    #             print(value)
-    #             num2oper[key] = value[0]
-    #             opers.add(value[0])
-    #             print(opers)
 
     res = {}
     while len(res) < 16:
-        for num, oper in num2opers.items():
-            if len(set(oper)) == 1:
-                res[num] = oper[0]
-            if oper
+        for n,o in res.items():
+            if n in num2opers:
+                del num2opers[n]
+            if o in oper2nums:
+                del oper2nums[o]
+        for num, opers in num2opers.items():
+            if len(opers) == 1:
+                oper = list(opers)[0]
+                res[num] = oper
+            for o in res.values():
+                if o in opers:
+                    opers.remove(o)
 
-        for oper, num in oper2nums.items():
-            if len(set(num)) == 1:
-                res[num[0]] = oper
+        for oper, nums in oper2nums.items():
+            if len(nums) == 1:
+                num = list(nums)[0]
+                res[num] = oper
 
-
+            for n in res.keys():
+                if n in nums:
+                    nums.remove(n)
+        print(res)
     print(res)
+
+    before = None
+    for line in prog:
+        oper = int(line[0])
+        a = int(line[1])
+        b = int(line[2])
+        c = int(line[3])
+        before = [oper, a, b, c] if before is None else before
+        res[oper](before, a, b, c)
+
+    print(before)
+    # 677 too high
+
+
+
