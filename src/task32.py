@@ -94,7 +94,7 @@ with open("../resources/task31.txt") as f:
                 strs = line.strip().split(' ')
                 entry['command'] = [int(strs[0]), int(strs[1]), int(strs[2]), int(strs[3])]
             else:
-                prog.append(line.split())
+                prog.append(map(int, line.split()))
 
     rops = [addr, mulr, banr, borr, setr, gtrr, eqrr]
     raops = [addi, muli, bani, bori, seti, gtri, eqri]
@@ -126,7 +126,6 @@ with open("../resources/task31.txt") as f:
 
     # part 2
 
-
     res = {}
     while len(res) < 16:
         for n,o in res.items():
@@ -150,19 +149,19 @@ with open("../resources/task31.txt") as f:
             for n in res.keys():
                 if n in nums:
                     nums.remove(n)
-        print(res)
+        # print(res)
     print(res)
 
-    before = None
+    # print(prog)
+    reg = [0,0,0,0]
     for line in prog:
-        oper = int(line[0])
-        a = int(line[1])
-        b = int(line[2])
-        c = int(line[3])
-        before = [oper, a, b, c] if before is None else before
-        res[oper](before, a, b, c)
+        oper = line[0]
+        a = line[1]
+        b = line[2]
+        c = line[3]
+        res[oper](reg, a, b, c)
 
-    print(before)
+    print(reg)
     # 677 too high
 
 
