@@ -128,39 +128,4 @@ with open("../resources/task31.txt") as f:
         if operCount>=3:
             count +=1
     print(count)
-    # part 2
-    # print(num2opers)
-    num2oper = {}
-    opers = set()
 
-    # from collections import Counter
-    # for key, value in num2opers.items():
-    # # print(key, max(value,key=value.count))
-    #     op2count = Counter(value)
-    #     print()
-
-
-
-    # while len(num2opers) > 0:
-    #     for key, value in num2opers.items():
-    #         if value in operations:
-    #             num2opers[key].remove(value)
-    #         if len(value) == 1:
-    #             print(value)
-    #             num2oper[key] = value[0]
-    #             opers.add(value[0])
-    #             print(opers)
-
-    res = {}
-    while len(res) < 16:
-        for num, oper in num2opers.items():
-            if len(set(oper)) == 1:
-                res[num] = oper[0]
-            if oper
-
-        for oper, num in oper2nums.items():
-            if len(set(num)) == 1:
-                res[num[0]] = oper
-
-
-    print(res)
