@@ -35,7 +35,7 @@ def choose_target(group, groups, chosen):
     enemies = sorted(enemies, key=lambda g: g.initiative, reverse=True)
     enemies = sorted(enemies, key=lambda g: g.units * g.damage, reverse=True)
     enemies = sorted(enemies, key=lambda g: calculate_damage(group, g), reverse=True)
-    return (None if len(enemies) == 0 or calculate_damage(group, enemies[0])==0 else enemies[0])
+    return None if len(enemies) == 0 or calculate_damage(group, enemies[0])==0 else enemies[0]
 
 with open("../resources/task47.txt") as f:
     content = f.readlines()
@@ -75,6 +75,16 @@ with open("../resources/task47.txt") as f:
     has_enemies = True
     active_groups = []
     while has_enemies:
+        print('Immune System:')
+        for g in groups:
+            if g.units > 0 and g.side == 'G':
+                print('Group ', g.id, ' contains ', g.units, ' units')
+        print('Infection:')
+        for g in groups:
+            if g.units > 0 and g.side == 'B':
+                print('Group ', g.id, ' contains ', g.units, ' units')
+
+
         active_groups = [g for g in groups if g.units > 0]
         active_groups = sorted(active_groups, key=lambda g: g.initiative, reverse=True)
         active_groups = sorted(active_groups, key=lambda g: g.units * g.damage, reverse=True)
@@ -83,18 +93,19 @@ with open("../resources/task47.txt") as f:
             has_enemies &= len([gr for gr in active_groups if gr.side != g.side and g.units > 0]) > 0
             enemy = choose_target(g, active_groups, combats.values())
             combats[g] = enemy
-            # print('Immune group ' if g.side == 'G' else 'Infection group ', g.id, ' will attack ', enemy.id)
+            if enemy is not None:
+                print('Immune System group ' if g.side == 'G' else 'Infection group ', g.id, ' would deal defending group ', enemy.id, ' ', calculate_damage(g, enemy), ' damage')
         initiative_groups = sorted(active_groups, key=lambda g: g.initiative, reverse=True)
         for g in initiative_groups:
             enemy = combats[g]
             if enemy is not None:
                 total_damage = calculate_damage(g, enemy)
                 units_killed = total_damage // enemy.hp
-                print('Immune group ' if g.side == 'G' else 'Infection group ', g.id, ' killed ', units_killed, ' in group ', enemy.id, ' leaving ', enemy.units - units_killed)
+                print('Immune group ' if g.side == 'G' else 'Infection group ', g.id, ' attacks defending group ', enemy.id, ' killing ', min(units_killed, enemy.units))
                 enemy.units = max(0, enemy.units - units_killed)
                 if enemy.units == 0:
                     active_groups.remove(enemy)
-        print('round')
+        print()
     print(sum([gr.units for gr in active_groups]))
 
 # 26766 too high
