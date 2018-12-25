@@ -113,10 +113,22 @@ with open("../resources/task47.txt") as f:
             id +=1
             groups.append(group)
 
-    side, units = emulate_fight(groups)
-    print(units)
+    from copy import deepcopy
+    min_boost = 0
+    max_boost = None
 
+    boost = 79
+    # while True:
+    side, units = emulate_fight(deepcopy(groups), boost)
+    print(boost, side, units)
+    if side == 'G':
+        max_boost = boost
+        boost = min_boost + (max_boost - min_boost) // 2
+    else:
+        min_boost = boost
+        boost += 10
+    if min_boost is not None and max_boost is not None and min_boost == max_boost-1:
+        print(max_boost)
+        # break
 
-# 26766 too high
-
-
+# 1650 too low
