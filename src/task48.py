@@ -107,7 +107,7 @@ with open("../resources/task47.txt") as f:
                     weaknesses = [s.strip() for s in substr_between(det, 'weak to ', None).split(',')]
 
             damage = int(substr_between(line, 'with an attack that does ', ' '))
-            attack = substr_between(line, str(damage), ' damage').strip()
+            attack = substr_between(line, 'does '+ str(damage), ' damage').strip()
             initiative = int(substr_between(line, 'initiative ', None).strip())
             group = Group(id, side, units, hp, weaknesses, immunities, attack, damage, initiative)
             id +=1
@@ -129,6 +129,9 @@ with open("../resources/task47.txt") as f:
         boost += 10
     if min_boost is not None and max_boost is not None and min_boost == max_boost-1:
         print(max_boost)
-        # break
+            # break
 
 # 1650 too low
+# 1651 too low
+# 2249 too high
+# 1852

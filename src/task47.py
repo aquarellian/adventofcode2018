@@ -107,7 +107,7 @@ with open("../resources/task47.txt") as f:
                     weaknesses = [s.strip() for s in substr_between(det, 'weak to ', None).split(',')]
 
             damage = int(substr_between(line, 'with an attack that does ', ' '))
-            attack = substr_between(line, str(damage), ' damage').strip()
+            attack = substr_between(line, 'does '+ str(damage), ' damage').strip()
             initiative = int(substr_between(line, 'initiative ', None).strip())
             group = Group(id, side, units, hp, weaknesses, immunities, attack, damage, initiative)
             id +=1
@@ -118,5 +118,6 @@ with open("../resources/task47.txt") as f:
 
 
 # 26766 too high
+# 26753
 
 
