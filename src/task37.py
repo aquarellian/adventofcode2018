@@ -103,6 +103,9 @@ with open("../resources/task37.txt") as f:
 
     reg = [1,0,0,0,0,0]
     ind = 0
+    firstCycleByPassed = False
+    secondCycleBypassed = False
+    count = 0
     try:
         while True:
             oper = data[ind][0]
@@ -110,16 +113,22 @@ with open("../resources/task37.txt") as f:
             reg[ip]=reg[ip]+1
             print(data[ind], reg)
             ind = reg[ip]
-            if reg[2]==9 and reg[3]==10551288 and reg[1] == 100: # : # and reg[4]==2 and reg[0] == 0 and  reg[5] ==0  skip 10M iterations
-                reg[1] = 10551287
-            # reg[4]= 2?
-            if reg[1] == 10551289 and reg[2] == 13 and reg[3] == 10551288 and reg[4] == 100:
-                reg[4] = 10551287
-            #     # reg[1] +=
-            #     reg[4] = 10551288
-            # if reg[1
-            # 10551288
-            # print(reg)
+
+            if reg[2]==9 and reg[3]==10551288 and not firstCycleByPassed:
+                skipIter = 10551288 - reg[1]
+                print('skipping ', skipIter, ' cycles')
+                reg[1] = 10551288
+                count += (skipIter*9)
+                firstCycleByPassed = True
+            elif reg[1] == 10551289 and reg[2] == 13 and reg[3] == 10551288 and firstCycleByPassed:
+                skipIter = 10551289 - reg[4]
+                print('skipping ', skipIter, ' cycles')
+                reg[4] = 10551289
+                count += skipIter
+                secondCycleBypassed = True
+            else:
+                count +=1
+
     except IndexError:
         print(reg[0])
     # 10551289 too low

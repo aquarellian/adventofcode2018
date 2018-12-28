@@ -140,10 +140,15 @@ def find_coord_to_move_on(player, target_x, target_y, player_field):
     return newx, newy
 
 
-def make_move(player, players, field):
+def make_move(player, players, field, elfPower):
     victim = find_victim(player, players)
     if victim is not None:
-        victim.hp -= 3
+        if victim.type == 'G':
+            victim.hp -= elfPower
+        else:
+            victim.hp -= 3
+            if victim.hp <= 0:
+                return True
     else:
         player_field = calculate_field(player, players, field)
         target_locations = get_target_locations(player, players, field)
@@ -154,7 +159,13 @@ def make_move(player, players, field):
             player.y = newy
             victim = find_victim(player, players)
             if victim is not None:
-                victim.hp -= 3
+                if victim.type == 'G':
+                    victim.hp -= elfPower
+                else:
+                    victim.hp -= 3
+                    if victim.hp <= 0:
+                        return True
+    return False
 
 
 def game_over(players):
@@ -185,6 +196,38 @@ def print_out(players, field):
         line += hp_out.get(y, '')
         print(line)
 
+
+def fight(players, field, elfPower):
+    over, score = game_over(players)
+    round = 0
+    while not over:
+        sorted_players = list(p for p in players if p.hp > 0)
+        sorted_players =sorted(sorted_players, key=lambda p: p.x)
+        sorted_players =sorted(sorted_players, key=lambda p: p.y)
+        # print_out(sorted_players, field)
+        for ind, p in enumerate(sorted_players):
+            if p.hp > 0:
+                updated_players = [s for s in sorted_players if s.hp > 0]
+                over, score = game_over(updated_players)
+                if over:
+                    # at least 1 left - current, it havent't moved yet! -> not full round
+                    round -=1 # why ?
+                    break
+                else:
+                    elfDied = make_move(p, updated_players, field, elfPower)
+                    if elfDied:
+                        return False
+            if over:
+                break
+        round +=1
+        # print(round)
+    print_out(sorted_players, field)
+    print(round)
+    print(score)
+    print(round*score)
+    return True
+
+
 with open("../resources/task29.txt") as f:
     content = f.readlines()
     players = []
@@ -203,33 +246,10 @@ with open("../resources/task29.txt") as f:
             elif line[x] == '.':
                 field[y].append(-1)
 
-
-    over, score = game_over(players)
-    round = 0
-    while not over:
-        sorted_players = list(p for p in players if p.hp > 0)
-        sorted_players =sorted(sorted_players, key=lambda p: p.x)
-        sorted_players =sorted(sorted_players, key=lambda p: p.y)
-        print_out(sorted_players, field)
-        for ind, p in enumerate(sorted_players):
-            if p.hp > 0:
-                updated_players = [s for s in sorted_players if s.hp > 0]
-                over, score = game_over(updated_players)
-                if over:
-                    # at least 1 left - current, it havent't moved yet! -> not full round
-                    round -=1 # why ?
-                    break
-                else:
-                    make_move(p, updated_players, field)
-            if over:
-                break
-        round +=1
-        print(round)
-    print_out(sorted_players, field)
-
-    print(round)
-    print(score)
-    print(round*score)
-
-    # 239057 too high
-
+    win_case = False
+    elf_power = 7
+    from copy import deepcopy
+    while not win_case:
+        elf_power+=1
+        win_case = fight(deepcopy(players), deepcopy(field), elf_power)
+        print(elf_power, win_case)
