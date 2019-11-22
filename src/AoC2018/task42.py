@@ -200,37 +200,35 @@ def sublist(lst1, lst2):
 def start_over(ip, data, reg0):
     reg = [reg0, 0, 0, 0, 0, 0]
     ind = 0
-    commands = []
-    pattern = []
     values = []
     count = 0
+    tmp = 0
     while True:
-        # if ind  in commands:
-        #     if ind in pattern:
-        #         if sublist(pattern, commands):
-        #             print('found pattern: ', pattern)
-        #             return
-        #
-        #     else:
-        #         pattern.append(ind)
-        # else:
-        #     commands.append(ind)
-
         oper = data[ind][0]
-
-        if oper == eqrr:
-            if reg[1] not in values:
-                values.append(reg[1])
-                print(count, reg[1])
-            else:
-                return values[-1]
         oper(reg, data[ind][1], data[ind][2], data[ind][3])
         reg[ip] = reg[ip] + 1
-        print(data[ind], ' res ', reg)
+        # print(data[ind], ' res ', reg)
         ind = reg[ip]
         count += 1
-        if count == 60:
-            break
+
+        if reg[4] == 24:
+            new_val = reg[3] // 256
+            count += (new_val - reg[2]) * 7
+            reg[2] = new_val
+        elif reg[4] == 28:
+            if reg[1] in values:
+                tmp += 1
+                if tmp == 1:
+                    print(reg[1])
+                if tmp == 100:
+                    print(values)
+                    break
+            values.append(reg[1])
+            # print(values)
+
+
+        # if count == 120:
+        #     break
 
     # start_over(ip, data, reg0 + 1)
 
@@ -254,7 +252,7 @@ with open("../resources/task41.txt") as f:
             data.append([getattr(thismodule, cmd)] + params)
 
     # reg0 = 2525738
-    reg0 = 1000
+    reg0 = 0
     try:
         # while True:c
         start_over(ip, data, reg0)
@@ -266,3 +264,5 @@ with open("../resources/task41.txt") as f:
         # 38424 too low
         # 10661894 too low
         # 2513594 too low
+        # 16252925 wrong
+        # 14340892 wrong

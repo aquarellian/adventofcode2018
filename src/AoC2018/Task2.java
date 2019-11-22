@@ -13,7 +13,7 @@ public class Task2 {
 
         String st;
         long res = 0;
-        Set<Long> freq = new HashSet<>();
+        Set<Long> freq = new HashSet<Long>();
         List<Long> seq = new ArrayList<>();
         freq.add(res);
 

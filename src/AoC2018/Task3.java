@@ -18,7 +18,7 @@ public class Task3 {
         String st;
 
         while ((st = br.readLine()) != null) {
-            Map<Character, Integer> char2count = new HashMap<>();
+            Map<Character, Integer> char2count = new HashMap<Character, Integer>();
             for (int i = 0; i < st.length(); i++) {
                 Character ch = st.charAt(i);
                 char2count.put(ch, char2count.containsKey(ch)? char2count.get(ch) + 1 : 1);

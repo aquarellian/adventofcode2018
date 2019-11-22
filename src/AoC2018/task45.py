@@ -61,17 +61,33 @@ with open("../resources/task45.txt") as f:
             reachable += 1
     print(reachable)
 
-    opt_x = 0
-    opt_y = 0
-    opt_z = 0
-    bots = 0
-    shrt_dist = None
-    avgx = avgx // len(id2data.items())
-    avgy = avgy // len(id2data.items())
-    avgz = avgz // len(id2data.items())
-    xdec = 0
-    ydec = 0
-    zdec = 0
+    from z3 import *
+    s = Solver()
+    x = Int('x')
+    y = Int('y')
+    z = Int('z')
+    s.add(And(x >= minx, x <= maxx, y >= miny, y <= maxy, z >= minz, z <= maxz))
+    # for id, value in id2data.items():
+    #     x1 = value[0]
+    #     y1 = value[1]
+    #     z1 = value[2]
+    #     r1 = value[3]
+    s.add(count(distance(x, y, z, x1, y1, z1) < r1) -> max)
+    s.add(distance(x, y, z, 0, 0, 0) -> Min)
+    s.check()
+    s.model()
+    #
+    # opt_x = 0
+    # opt_y = 0
+    # opt_z = 0
+    # bots = 0
+    # shrt_dist = None
+    # avgx = avgx // len(id2data.items())
+    # avgy = avgy // len(id2data.items())
+    # avgz = avgz // len(id2data.items())
+    # xdec = 0
+    # ydec = 0
+    # zdec = 0
     # for x in
 
     # for i in range(minx, maxx+1):
