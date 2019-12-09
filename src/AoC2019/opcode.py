@@ -1,15 +1,16 @@
 class Amplifier:
     index = 0
-    phase = 0
-    content = []
+    content = {}
     out = None
     halted = False
+    base = 0
 
-    def __init__(self, phase, content):
-        self.phase = phase
+    def __init__(self, content, phase=None):
         self.index = 0
-        self.content = list(content)
-        self.apply(phase)
+        self.base = 0
+        self.content = {k: v for k, v in enumerate(content)}
+        if phase is not None:
+            self.apply(phase)
 
 
     def apply(self, signal):
@@ -18,6 +19,7 @@ class Amplifier:
         while True:
             operator = self.content[self.index]
             oper, mode1, mode2, mode3 = self.parse_oper(operator)
+            # print(mode3, mode2, mode1,0, oper)
             if oper != 99:
                 p1 = int(self.content[self.index + 1])
                 # print(self.content)
@@ -27,28 +29,36 @@ class Amplifier:
             if oper in [1,2,7,8]:
                 p3 = int(self.content[self.index + 3])
                 # print(self.content)
-            if mode3 != 0:
+            if mode3 == 1:
                 print('error: value mode for register 3')
 
             if oper == 1:
                 v1 = self.get_val(mode1, p1)
                 v2 = self.get_val(mode2, p2)
-                self.content[p3] = v1 + v2
+                ind = self.get_ind(mode3, p3)
+                self.content[ind] = v1 + v2
                 self.index += 4
                 # print(self.content)
             elif oper == 2:
                 v1 = self.get_val(mode1, p1)
                 v2 = self.get_val(mode2, p2)
-                self.content[p3] = v1 * v2
+                ind = self.get_ind(mode3, p3)
+                self.content[ind] = v1 * v2
                 self.index += 4
                 # print(self.content)
             elif oper == 3:
                 if not signal_read:
-                    self.content[p1] = signal
+                    # print(mode1)
+                    # v1 = self.get_val(mode1, p1)
+                    # print(mode1, p1, self.base, v1)
+                    # print(self.content.get(int(self.content[p1]) + self.base, 0))
+                    ind = self.get_ind(mode1, p1)
+                    self.content[ind] = signal
                     self.index += 2
                     signal_read = True
                     # print(self.content)
                 else:
+                    print('no signal')
                     break
             elif oper == 4:
                 v1 = self.get_val(mode1, p1)
@@ -57,7 +67,9 @@ class Amplifier:
                 #     print('error: returning more than one res', return_value, v1)
                 return_value = v1
                 self.out = v1
-                return v1
+                # print('output')
+                print(v1)
+                # return v1
                 # print(self.content)
             elif oper == 5:
                 v1 = self.get_val(mode1, p1)
@@ -78,15 +90,21 @@ class Amplifier:
             elif oper == 7:
                 v1 = self.get_val(mode1, p1)
                 v2 = self.get_val(mode2, p2)
-                self.content[p3] = 1 if v1 < v2 else 0
+                ind = self.get_ind(mode3, p3)
+                self.content[ind] = 1 if v1 < v2 else 0
                 self.index += 4
                 # print(self.content)
             elif oper == 8:
                 v1 = self.get_val(mode1, p1)
                 v2 = self.get_val(mode2, p2)
-                self.content[p3] = 1 if v1 == v2 else 0
+                ind = self.get_ind(mode3, p3)
+                self.content[ind] = 1 if v1 == v2 else 0
                 self.index += 4
                 # print(self.content)
+            elif oper == 9:
+                v1 = self.get_val(mode1, p1)
+                self.base += v1
+                self.index += 2
             elif oper == 99:
                 print('program halted')
                 # print(self.content)
@@ -110,12 +128,23 @@ class Amplifier:
         # print(o, c, b, a)
         return o, c, b, a
 
+    def get_ind(self, mode, val):
+        if mode == 0:
+            return int(val)
+        elif mode == 2:
+            return int(val) + self.base
+        else:
+            print('invalid index mode:', val)
 
     def get_val(self, mode, val):
-        if mode == 0:
-            return int(self.content[int(val)])
-        elif mode == 1:
+        if mode == 1:
             return int(val)
+        elif mode in [0, 2]:
+            ind = self.get_ind(mode, val)
+            if ind < 0:
+                print('error: negative index')
+            else:
+                return int(self.content.get(ind, 0))
         else:
             print('invalid parameter mode')
 

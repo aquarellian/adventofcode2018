@@ -19,11 +19,11 @@ for a in range(5,10):
 print(permutations)
 maxsign = 0
 for p in permutations:
-    a = opcode.Amplifier(int(p[0]), content)
-    b = opcode.Amplifier(int(p[1]), content)
-    c = opcode.Amplifier(int(p[2]), content)
-    d = opcode.Amplifier(int(p[3]), content)
-    e = opcode.Amplifier(int(p[4]), content)
+    a = opcode.Amplifier(content, int(p[0]))
+    b = opcode.Amplifier(content, int(p[1]))
+    c = opcode.Amplifier(content, int(p[2]))
+    d = opcode.Amplifier(content, int(p[3]))
+    e = opcode.Amplifier(content, int(p[4]))
 
     amps = [a,b,c,d,e]
     signal = 0
