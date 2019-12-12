@@ -14,7 +14,7 @@ class Amplifier:
 
 
     def apply(self, signal):
-        return_value = None
+        return_value = []
         signal_read = False
         while True:
             operator = self.content[self.index]
@@ -58,17 +58,18 @@ class Amplifier:
                     signal_read = True
                     # print(self.content)
                 else:
-                    print('no signal')
-                    break
+                    return return_value
+                    # print('no signal')
+                    # break
             elif oper == 4:
                 v1 = self.get_val(mode1, p1)
                 self.index += 2
                 # if return_value is not None:
                 #     print('error: returning more than one res', return_value, v1)
-                return_value = v1
-                self.out = v1
-                # print('output')
-                print(v1)
+                return_value.append(v1)
+                # self.out = v1
+                # # print('output')
+                # print(v1)
                 # return v1
                 # print(self.content)
             elif oper == 5:
