@@ -58,8 +58,8 @@ class Amplifier:
                     signal_read = True
                     # print(self.content)
                 else:
+                    print('waiting for next signal')
                     return return_value
-                    # print('no signal')
                     # break
             elif oper == 4:
                 v1 = self.get_val(mode1, p1)
@@ -114,7 +114,7 @@ class Amplifier:
             else:
                 print('program error: invalid operation', oper)
                 break
-        # return return_value
+        return return_value
 
 
     def parse_oper(self, oper):
@@ -149,8 +149,3 @@ class Amplifier:
         else:
             print('invalid parameter mode')
 
-# 20270370 too low
-# 18938402
-# 14737954,
-# 12640802,
-# 19477026,
