@@ -13,14 +13,20 @@ def update_map(x, y, _map, value):
     _map[y][x] = value
 
 
-def print_field(field):
+def print_field(field, dx, dy, dir):
     for y in range(min(field.keys(), max(field.keys())+1)):
         line = ''
         if y in field.keys():
             for x in range(min(field[y].keys(), max(field[y].keys())+1)):
-                line += field[y].get(x, '?')
+                if y ==dy and x == dx:
+                    line += '^' if dir == 1 else '>' if dir == 4 else 'v' if dir ==2 else '<'
+                else:
+                    line += field[y].get(x, '?')
         else:
-            line + '?' * (max(field.keys) - min(field.keys() + 1))
+            if y == dy:
+                line += '?'*dx + ('^' if dir == 1 else '>' if dir == 4 else 'v' if dir ==2 else '<')
+            else:
+                line + '?' * (max(field.keys) - min(field.keys() + 1))
         print(line)
 
 
@@ -71,6 +77,6 @@ while i > 0:
         x = _x
         y = _y
     print(_x,  _y)
-    print_field(_map)
+    print_field(_map, x, y, dir)
 
 
