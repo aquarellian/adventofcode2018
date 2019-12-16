@@ -66,8 +66,9 @@ class Amplifier:
                 self.index += 2
                 # if return_value is not None:
                 #     print('error: returning more than one res', return_value, v1)
-                return_value.append(v1)
+                # return_value.append(v1)
                 # self.out = v1
+                return v1
                 # # print('output')
                 # print(v1)
                 # return v1
