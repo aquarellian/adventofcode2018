@@ -68,8 +68,10 @@ if fuel[0].count != 1:
 
 ore,stash  = desintegrate('FUEL', 1, book)
 print(ore)
-#low 78567
-# low 486815
+# ore,stash  = desintegrate('FUEL', 1, book, {})
+# print(ore)
+rcnt = (float(ore) / float(1))
+# 783895
 
 def is_stash_empty(stash):
     for k, v in stash.items():
@@ -83,19 +85,66 @@ def is_stash_empty(stash):
 # 1277654 wrong
 # 1276192
 # 1280549wrong
+# 1897500
+# 1897528
 
-count = 1000000000000 // ore
+# 1891295 ->
+# 1891547
+# 1893300 wrong
+# 1894516 !!
+ # 1894518
+#  1894707
+# 1895622
+# 1895730 wrong
+# 1896163 wrong
 
-count -=20000# print(count)
-remains = 1000000000000 - ore*count
+
+# count100, stash = desintegrate('FUEL', 100, book)
+
+# print('1:', ore, '100:', count100)
+opt = 527380.7259259259
+ocnt = 540
+print(ore, 1, rcnt)
+
+# for cnt in range(500, 550):
+#     ore, stash = desintegrate('FUEL', cnt, book, {})
+#     rcnt = (float(ore) / float(cnt))
+#     if rcnt < opt:
+#         print(ore, cnt, rcnt)
+#         opt = rcnt
+#         ocnt = cnt
+# print('optimal:', ocnt, opt)
+
+
+stash = {}
+count = 0
+remains = 1000000000000
+while remains > (1000000000000 % ocnt) + ocnt:
+     ore, stash = desintegrate('FUEL', ocnt, book, stash)
+     remains -= ore
+     count += ocnt
+
+# count = ocnt * (1000000000000 // ore)
+# remains = 1000000000000 % ore
+# print(count)
 while remains > 0:
-    if count > 1280549:
-        print(count, remains)
     o, stash = desintegrate('FUEL', 1, book, stash)
     remains -= o
     count += 1
-
+    print(count, remains)
 print(count-1)
 
+#1000000000025
 
+
+# count -=20000# print(count)
+# remains = 1000000000000 - ore*count
+# while remains > 0:
+#     if count > 1280549:
+#         print(count, remains)
+#     o, stash = desintegrate('FUEL', 1, book, stash)
+#     remains -= o
+#     count += 1
+#
+# print(count-1)
 
