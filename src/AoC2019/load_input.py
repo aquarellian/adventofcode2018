@@ -1,6 +1,6 @@
 import requests
 
-aoc_session = '53616c7465645f5f26597e0af8a59cd0297bc822a8680a87dfc854d6a1cfb8912fef3ade09c4ee4aa871d8a21c40fc1d'
+aoc_session = '53616c7465645f5fa22f484a9b3c0e37c5f51f0ed60a1201070e4f4e957ef2f8e9ef02eb0f44632cc284414d78a2204a'
 cookies = {'session': aoc_session}
 
 def save_to_file(txt_content, path):
