@@ -58,7 +58,7 @@ class Amplifier:
                     signal_read = True
                     # print(self.content)
                 else:
-                    print('waiting for next signal')
+                    # print('waiting for next signal')
                     return return_value
                     # break
             elif oper == 4:
