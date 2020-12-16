@@ -98,41 +98,52 @@ def is_stash_empty(stash):
 # 1895730 wrong
 # 1896163 wrong
 
+val = 1896163
+ore, stash  = desintegrate('FUEL', val, book, {})
+print(val, ore, stash)
+while ore < 1000000000000:
+    val += 1
+    ore, stash  = desintegrate('FUEL', val, book, {})
+    print(val, ore, stash)
+print('res:', val-1, ore)
+
+
+
 
 # count100, stash = desintegrate('FUEL', 100, book)
 
 # print('1:', ore, '100:', count100)
-opt = 527380.7259259259
-ocnt = 540
-print(ore, 1, rcnt)
-
-# for cnt in range(500, 550):
-#     ore, stash = desintegrate('FUEL', cnt, book, {})
-#     rcnt = (float(ore) / float(cnt))
-#     if rcnt < opt:
-#         print(ore, cnt, rcnt)
-#         opt = rcnt
-#         ocnt = cnt
-# print('optimal:', ocnt, opt)
-
-
-stash = {}
-count = 0
-remains = 1000000000000
-while remains > (1000000000000 % ocnt) + ocnt:
-     ore, stash = desintegrate('FUEL', ocnt, book, stash)
-     remains -= ore
-     count += ocnt
-
-# count = ocnt * (1000000000000 // ore)
-# remains = 1000000000000 % ore
-# print(count)
-while remains > 0:
-    o, stash = desintegrate('FUEL', 1, book, stash)
-    remains -= o
-    count += 1
-    print(count, remains)
-print(count-1)
+# opt = 527380.7259259259
+# ocnt = 540
+# print(ore, 1, rcnt)
+#
+# # for cnt in range(500, 550):
+# #     ore, stash = desintegrate('FUEL', cnt, book, {})
+# #     rcnt = (float(ore) / float(cnt))
+# #     if rcnt < opt:
+# #         print(ore, cnt, rcnt)
+# #         opt = rcnt
+# #         ocnt = cnt
+# # print('optimal:', ocnt, opt)
+#
+#
+# stash = {}
+# count = 0
+# remains = 1000000000000
+# while remains > (1000000000000 % ocnt) + ocnt:
+#      ore, stash = desintegrate('FUEL', ocnt, book, stash)
+#      remains -= ore
+#      count += ocnt
+#
+# # count = ocnt * (1000000000000 // ore)
+# # remains = 1000000000000 % ore
+# # print(count)
+# while remains > 0:
+#     o, stash = desintegrate('FUEL', 1, book, stash)
+#     remains -= o
+#     count += 1
+#     print(count, remains)
+# print(count-1)
 
 #1000000000025
 

@@ -26,8 +26,10 @@ content = load_input.load(2019, 22).split('\n')
 # content = 'deal with increment 7\ndeal into new stack\ndeal into new stack\n'.split('\n')
 # content = 'cut 6\ndeal with increment 7\ndeal into new stack\n'.split('\n')
 # content = 'deal with increment 7\ndeal with increment 9\ncut -2\n'.split('\n')
-arr = [ele for ele in range(10007)]
-# arr = range(0, 10)
+content = 'deal with increment 3\ndeal into new stack\ndeal with increment 4\ndeal into new stack'.split('\n')
+content = 'deal with increment 3\ndeal with increment \n'.split('\n')
+# arr = [ele for ele in range(10007)]
+arr = [ele for ele in range(0, 10)]
 i = 0
 for cmd in content:
     print(i, cmd)
@@ -45,11 +47,12 @@ for cmd in content:
         ln = len('cut ')
         num = int(cmd[ln:])
         arr = cut(arr, num)
-# print(arr)
-print(arr[2019])
+print(arr)
+# print(arr[2019])
 # 5594 too high
-for i, a in enumerate(arr):
-    if a == 2019:
-        print(i)
-        break
+# for i, a in enumerate(arr):
+#     if a == 2019:
+#         print(i)
+#         break
+
 
