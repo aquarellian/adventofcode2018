@@ -2,43 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f81725f-5814-46fd-a531-fb102bbf2bb5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d10_test1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d10_test2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d11_test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d12.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d12_test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d13.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d13_test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d14.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d14_test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d14_test2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d16.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/AoC2020/d16_test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AoC2020/d10.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AoC2020/d11.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AoC2020/d12.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AoC2020/d13.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AoC2020/d14.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AoC2020/d15.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AoC2020/d16.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d3_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d3_test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d4_test2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d4_test2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d7_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d7_test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d8_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d8_test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d9.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d9_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d9_test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AoC2019/d14t1.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/AoC2019/d14t1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AoC2019/d22t1_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/AoC2019/d22t1_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d18.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d18.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d18_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d18_test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d19.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d19_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d19_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d19_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d19_test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d20_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d20_test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d21.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d21.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d21_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d21_test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/AoC2020/d22.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/AoC2020/d22.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,17 +44,18 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/AoC2020" />
-      <recent name="$PROJECT_DIR$/src/AoC2019" />
-      <recent name="$PROJECT_DIR$/resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/AoC2020" />
       <recent name="C:\Users\UC247502\IdeaProjects\AoC\adventofcode2018\resources" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/AoC2020" />
+      <recent name="$PROJECT_DIR$/resources/AoC2020" />
+      <recent name="$PROJECT_DIR$/src/AoC2019" />
+      <recent name="$PROJECT_DIR$/resources" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.d16">
+  <component name="RunManager" selected="Python.d19">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="WIDTH" value="0" />
@@ -104,90 +79,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="d12" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="adventofcode2018" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/AoC2020" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/AoC2020/d12.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="d13" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="adventofcode2018" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/AoC2020" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/AoC2020/d13.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="d14" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="adventofcode2018" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/AoC2020" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/AoC2020/d14.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="d15" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="adventofcode2018" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/resources/AoC2020" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/AoC2020/d15.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="d15t1" type="PythonConfigurationType" factoryName="Python">
       <module name="adventofcode2018" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -209,7 +100,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="d16" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="d18" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="adventofcode2018" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -221,7 +112,112 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/AoC2020/d16.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/AoC2020/d18.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="d19" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="adventofcode2018" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/AoC2020" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/AoC2020/d19.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="d21" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="adventofcode2018" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/AoC2020" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/AoC2020/d21.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="d23" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="adventofcode2018" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/AoC2020" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/AoC2020/d23.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="d23_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="adventofcode2018" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/AoC2020" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/AoC2020/d23_2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="d25" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="adventofcode2018" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/AoC2020" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/AoC2020/d25.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -251,19 +247,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.d15t1" />
-      <item itemvalue="Python.d12" />
-      <item itemvalue="Python.d13" />
-      <item itemvalue="Python.d14" />
-      <item itemvalue="Python.d15" />
-      <item itemvalue="Python.d16" />
+      <item itemvalue="Python.d19" />
+      <item itemvalue="Python.d21" />
+      <item itemvalue="Python.d23" />
+      <item itemvalue="Python.d23_2" />
+      <item itemvalue="Python.d25" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.d16" />
-        <item itemvalue="Python.d15" />
-        <item itemvalue="Python.d14" />
-        <item itemvalue="Python.d13" />
-        <item itemvalue="Python.d12" />
+        <item itemvalue="Python.d19" />
+        <item itemvalue="Python.d25" />
+        <item itemvalue="Python.d23_2" />
+        <item itemvalue="Python.d23" />
+        <item itemvalue="Python.d21" />
       </list>
     </recent_temporary>
   </component>
@@ -282,67 +278,72 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="425" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608673970674">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="425" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1608673970674" />
     <state width="729" height="466" key="DebuggerActiveHint" timestamp="1607390669852">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="729" height="466" key="DebuggerActiveHint/0.0.1440.900@0.0.1440.900" timestamp="1607390669852" />
-    <state width="1396" height="447" key="GridCell.Tab.0.bottom" timestamp="1608156736161">
+    <state width="1396" height="317" key="GridCell.Tab.0.bottom" timestamp="1609452724194">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1396" height="447" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1608156736161" />
+    <state width="1396" height="317" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609452724194" />
     <state width="1396" height="447" key="GridCell.Tab.0.bottom/0.23.1440.837@0.23.1440.837" timestamp="1607992740603" />
-    <state width="1396" height="447" key="GridCell.Tab.0.center" timestamp="1608156736159">
+    <state width="1396" height="317" key="GridCell.Tab.0.center" timestamp="1609452724192">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1396" height="447" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1608156736159" />
+    <state width="1396" height="317" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1609452724192" />
     <state width="1396" height="447" key="GridCell.Tab.0.center/0.23.1440.837@0.23.1440.837" timestamp="1607992740602" />
-    <state width="1396" height="447" key="GridCell.Tab.0.left" timestamp="1608156736159">
+    <state width="1396" height="317" key="GridCell.Tab.0.left" timestamp="1609452724191">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1396" height="447" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1608156736159" />
+    <state width="1396" height="317" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1609452724191" />
     <state width="1396" height="447" key="GridCell.Tab.0.left/0.23.1440.837@0.23.1440.837" timestamp="1607992740601" />
-    <state width="1396" height="447" key="GridCell.Tab.0.right" timestamp="1608156736160">
+    <state width="1396" height="317" key="GridCell.Tab.0.right" timestamp="1609452724193">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1396" height="447" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1608156736160" />
+    <state width="1396" height="317" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1609452724193" />
     <state width="1396" height="447" key="GridCell.Tab.0.right/0.23.1440.837@0.23.1440.837" timestamp="1607992740602" />
-    <state width="1396" height="447" key="GridCell.Tab.1.bottom" timestamp="1608156736077">
+    <state width="1396" height="317" key="GridCell.Tab.1.bottom" timestamp="1609452724198">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1396" height="447" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1608156736077" />
+    <state width="1396" height="317" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609452724198" />
     <state width="1396" height="447" key="GridCell.Tab.1.bottom/0.23.1440.837@0.23.1440.837" timestamp="1607992740606" />
-    <state width="1396" height="447" key="GridCell.Tab.1.center" timestamp="1608156736076">
+    <state width="1396" height="317" key="GridCell.Tab.1.center" timestamp="1609452724197">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1396" height="447" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1608156736076" />
+    <state width="1396" height="317" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1609452724197" />
     <state width="1396" height="447" key="GridCell.Tab.1.center/0.23.1440.837@0.23.1440.837" timestamp="1607992740605" />
-    <state width="1396" height="447" key="GridCell.Tab.1.left" timestamp="1608156736076">
+    <state width="1396" height="317" key="GridCell.Tab.1.left" timestamp="1609452724196">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1396" height="447" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1608156736076" />
+    <state width="1396" height="317" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1609452724196" />
     <state width="1396" height="447" key="GridCell.Tab.1.left/0.23.1440.837@0.23.1440.837" timestamp="1607992740604" />
-    <state width="1396" height="447" key="GridCell.Tab.1.right" timestamp="1608156736077">
+    <state width="1396" height="317" key="GridCell.Tab.1.right" timestamp="1609452724198">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1396" height="447" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1608156736077" />
+    <state width="1396" height="317" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1609452724198" />
     <state width="1396" height="447" key="GridCell.Tab.1.right/0.23.1440.837@0.23.1440.837" timestamp="1607992740605" />
-    <state width="720" height="403" key="XDebugger.FullValuePopup" timestamp="1608152641813">
+    <state width="720" height="403" key="XDebugger.FullValuePopup" timestamp="1609451145236">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="720" height="403" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1608152641813" />
-    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607453219129">
+    <state width="720" height="403" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1609451145236" />
+    <state width="720" height="403" key="XDebugger.FullValuePopup/0.23.1440.837@0.23.1440.837" timestamp="1609450271057" />
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1609449199375">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1606814816420" />
-    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.837@0.23.1440.837" timestamp="1607453219129" />
-    <state x="272" y="186" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1608053907568">
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1609438540252" />
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.837@0.23.1440.837" timestamp="1609449199375" />
+    <state x="272" y="186" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1608679793713">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="272" y="186" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900@0.0.1440.900" timestamp="1608053907568" />
-    <state x="412" y="205" width="726" height="490" key="find.popup" timestamp="1608156784139">
+    <state x="272" y="186" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900@0.0.1440.900" timestamp="1608679793713" />
+    <state x="412" y="205" width="726" height="490" key="find.popup" timestamp="1609006819442">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="412" y="205" width="726" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1608156784139" />
+    <state x="412" y="205" width="726" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1609006819442" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1607978803197">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -417,6 +418,71 @@
           <line>101</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d17.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d20.py</url>
+          <line>74</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d18.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d18.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d22.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d22_2.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d22_2.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="178" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d21.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d23.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="210" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d23_2.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d19.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="264" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d19.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="265" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/AoC2020/d19.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="266" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint suspend="NONE" type="python-exception">
@@ -428,15 +494,17 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="v" language="Python" />
-        <watch expression="turn" language="Python" />
-        <watch expression="list([v1, v2, v3, v4])" language="Python" />
-        <watch expression="line[:line.index(':')]" language="Python" />
+        <watch expression="check(rule, line.strip())" language="Python" />
+        <watch expression="line" language="Python" />
+        <watch expression="pattern" />
+        <watch expression="rule" language="Python" />
         <watch expression="line" />
-        <watch expression="line[line.index('-') + 1: line.index('or')].strip()" language="Python" />
-        <watch expression="line.index('-') + 1" language="Python" />
-        <watch expression="line.index('or')" language="Python" />
-        <watch expression="pos_to_rule" language="Python" />
+        <watch expression="check(rule, line.strip())" language="Python" />
+        <watch expression="pattern" language="Python" />
+        <watch expression="v1" language="Python" />
+        <watch expression="rules[0]" language="Python" />
+        <watch expression="v1" language="Python" />
+        <watch expression="v2" language="Python" />
       </configuration>
       <configuration name="Application">
         <watch expression="st.substring(i)" language="JAVA" />
